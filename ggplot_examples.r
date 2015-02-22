@@ -3,10 +3,10 @@
 # February 22, 2015
 
 # Install packages
-#install.packages("ggplot2, dependencies = TRUE")
-#install.packages("plyr")
-#install.packages("ggthemes")
-#install.packages("reshape2")
+install.packages("ggplot2, dependencies = TRUE")
+install.packages("plyr")
+install.packages("ggthemes")
+install.packages("reshape2")
 
 # Load the libraries
 library("ggplot2")
