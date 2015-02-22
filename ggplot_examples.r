@@ -78,13 +78,25 @@ df <- melt(iris, id.vars = "Species")
 ggplot(df, aes(Species, value, fill = variable)) +
   geom_bar(stat = "identity", position = "dodge") +
   scale_fill_brewer(palette = "Set1")
+# Can also set out colors
+ggplot(df, aes(Species, value, fill = variable)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_value(values = c("red", "green", "blue")) #This scale_fill_value isnt right gah
 
+# Scales can also be added to plots. As an example
+scale_y_continuous(labels = (paste0(1:4, "Kg")), breaks = seq(1000,4000, by = 1000))
 
+# Coordinates - can be used to change to polar/log coordinates
 
+# Histograms
+h <- ggplot(faithful, aes(x = waiting))
+h + geom_histogram(binwidth = 8, fill = "steelblue", colour = "black")
 
+# geom_line() can also be used to draw a line plot
+# geom_ribbon() can be used to make confidence regions around it
 
+# Themes can be used to set everything about that splot. See options in ?themes()
++theme()
 
-
-
-
-
+# For everything I can dream and more
+# docs.ggplot2.org/current/
