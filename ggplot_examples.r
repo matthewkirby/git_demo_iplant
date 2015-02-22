@@ -67,9 +67,17 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 # as both rows and columns
 
 
-
-
-
+# Can set colors or a scale
+aes(color = variable)
+scale_fill_brewer(palette = "palette name here")
+# A library with different color palettes
+library(RColorBrewer)
+display.brewer.all()
+# Use the color scale
+df <- melt(iris, id.vars = "Species")
+ggplot(df, aes(Species, value, fill = variable)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_brewer(palette = "Set1")
 
 
 
