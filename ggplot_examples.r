@@ -48,12 +48,23 @@ ggplot(d2, aes(carat, price, color = color)) +
 # Statistical transformations and data summary
 library("MASS")
 head(birthwt)
-ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot()
+myplot <- ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot(outlier.colour = "red")
+summary(myplot)
+myplot
 
 
 
-
-
+# Facets - subsetting data to make lattic plots
+# facet_grid (Subset ~ .) for multiple rows
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point() +
+  facet_grid(Species ~ .)
+# facet_grid (~ . Subset) for multiple columns
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point() +
+  facet_grid(. ~ Species)
+# facet_wrap (~ Subset) will do its best to fill in the total space
+# as both rows and columns
 
 
 
