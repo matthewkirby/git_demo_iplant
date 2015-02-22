@@ -27,4 +27,41 @@ ggplot(Syria.in, aes(year, gdpPercap)) + geom_point() + ggtitle("Syria")
 ```
 I notice that the three curves trend upwards. All three contries experience a spike downward around 1990.
 
+Next I want to calculate the mean life expectancies for each continent.
+```{r}
+aggregate(fulldata.in$lifeExp, list(fulldata.in$continent), mean)
+```
+
+The max life expenetancy
+```{r}
+aggregate(fulldata.in$lifeExp, list(fulldata.in$continent), max)
+```
+
+And the min life expectancy
+```{r}
+aggregate(fulldata.in$lifeExp, list(fulldata.in$continent), min)
+```
+
+
+Finally I want to make two histograms of global life expectancies
+
+```{r}
+ggplot(fulldata.in, aes(
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
