@@ -46,9 +46,8 @@ aggregate(fulldata.in$lifeExp, list(fulldata.in$continent), min)
 Finally I want to make two histograms of global life expectancies
 
 ```{r}
-ggplot(fulldata.in, aes(
-
-
+ggplot(fulldata.in, aes(x=lifeExp)) + geom_histogram() + ggtitle("Global Life expectancies with default bins")
+ggplot(fulldata.in, aes(x=lifeExp)) + geom_histogram(binwidth=.5) + ggtitle("Global Life expectancies with better spaced bins")
 
 ```
 
